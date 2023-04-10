@@ -13,33 +13,53 @@
             <nav class="navbar top">
                 <h1>dice game</h1>
             </nav>
-            <div class="scrolling-wrapper">
-                <div class="card first-stage" id="stage-1 "><h2>stage 1</h2></div>
-                <div class="card" id="stage-2"><h2>stage 2</h2></div>
-                <div class="card" id="stage-3"><h2>stage 3</h2></div>
-                <div class="card" id="stage-4"><h2>stage 4</h2></div>
-                <div class="card" id="stage-5"><h2>stage 5</h2></div>
-                <div class="card" id="stage-6"><h2>stage 6</h2></div>
-                <div class="card" id="stage-7"><h2>stage 7</h2></div>
-                <div class="card" id="stage-8"><h2>stage 8</h2></div>
-                <div class="card" id="stage-9"><h2>stage 9</h2></div>
-                <div class="card" id="stage-10"><h2>stage 10</h2></div>
-                <div class="card last-stage" id="stage-11"><h2>stage 11</h2></div>
+            <div class="game-area" id="game-area">
+                <h2 class="stage">rules:</h2>
+                <div class="result">
+                    <ol>
+                        <li>Your goal is to complete stages 1-11 by rolling a unique number each time.</li>
+                        <li>At each stage, you have two attempts to roll a unique number. You can click a die to freeze it between attempts if you want.</li>
+                        <li>The game ends if your final roll is a repeat number or if you make it to the end and win!</li>
+                    </ol>
+                </div>
             </div>
-            <div class="num-bank" id="num-bank"><h3>num bank</h3></div>
+            <div class="num-bank" id="num-bank">
+                <h3>num bank</h3>
+                <ul class="num-list">
+                    <li>2</li>
+                    <li>2</li>
+                    <li>2</li>
+                    <li>2</li>
+                </ul>
+            </div>
             <div class="dice-container" id="dice-container">
-                <div class="dice" id="firstDie">
-                    <h1>1</h1>
+                <div class="dice">
+                    <img id="dieone" src="images/three.png">
                 </div>
-                <div class="dice" id="secondDie">
-                    <h1>1</h1>
+                <div class="dice">
+                    <img id="dietwo" src="images/four.png">
                 </div>
+            </div>
+            <div class="comm-container">
+                <p class="comm" id="comm">Roll the dice to begin.</p>
             </div>
             <div class="btn-container">
-                <button class="roll-btn">roll dice</button>
+                <button class="roll-btn" id="roll-btn">roll</button>
+            </div>
+            <div class="footer">
+                <p>Copyright 2023 Alex McDonald</p>
+                <p>
+                    <a href="https://www.flaticon.com/free-icons/dice" title="dice icons">Dice icons created by Freepik - Flaticon</a>
+                </p>
             </div>
         </main>
         <!-- javascript -->
         <script src="app.js"></script>
     </body>
+    <footer>
+        <!--
+            Credits:
+            <a href="https://www.flaticon.com/free-icons/dice" title="dice icons">Dice icons created by Freepik - Flaticon</a>
+        -->
+    </footer>
 </html>

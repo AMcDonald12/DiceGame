@@ -4,13 +4,19 @@ Variables
 =========
 */
 :root {
-    /*Dice side length*/
+    /*Dice variables*/
     --dicesize: 10vh;
+    --selected: green;
+
     /*Color Palette*/
     --font1: black;
     --font2: white;
-    --theme1: black;
-    --theme2: white;
+    --theme1: #010101;
+    --theme2: #131313;
+    --theme3: #2285EB;
+    --theme4: #FFEB32;
+    --theme5: #AB47BB;
+    --gameover: #E93F33;
 }
 
 /*
@@ -18,9 +24,15 @@ Variables
 Global Styles
 =============
 */
+* {
+    margin: 0;
+    vertical-align: baseline;
+}
+
 main {
+    background-color: var(--theme1);
     text-align: center;
-  }
+}
 
 .navbar {
     height: 5vh;
@@ -28,43 +40,48 @@ main {
     background-color: var(--theme1);
 }
 
-.scrolling-wrapper {
-    overflow-x: scroll;
-    overflow-y: hidden;
-    white-space: nowrap;
-    height:50vh;
+.game-area {
+    height: 40vh;
+    color: var(--font2);
+    background-color: var(--theme1);
+    align-content: center;
 }
-  
-.card {
+
+.stage {
+    margin-top: 2vh;
+}
+ol {
+    width: 50vw;
+    text-align: left;
     display: inline-block;
-    box-shadow: 0px 4px 8px 4px rgba(0,0,0,0.2);
-    transition: 0.3s;
-    border-radius: 5px;
-    height: 50vh;
-    width: 25vw;
-    margin-right: 10vw;
-    text-align: center;
+    margin-top: 5vh;
 }
 
-.first-stage{
-    margin-left: calc(50vw - (25vw / 2));
+li {
+    margin-bottom: 10px;
 }
 
-.last-stage {
-    margin-right: calc(50vw - (25vw / 2));
+.prompt {
+    bottom: 0;
 }
 
 .num-bank {
     height: 10vh;
     width: 75vw;
-    border: 3px solid black;
+    border: 3px solid white;
     margin-bottom: 2vh;
+    margin-top: 2vh;
     margin-left: auto;
     margin-right: auto;
+    color: var(--font2);
+}
+
+.num-list {
+    display: inline;
 }
 
 .dice-container {
-    height: 10vh;
+    height: 15vh;
     width: 75vw;
     margin-bottom: 3vh;
     margin-left: auto;
@@ -74,19 +91,44 @@ main {
 
 .dice {
     display: inline-block;
-    height: var(--dicesize);
-    width: var(--dicesize);
-    border: 3px solid black;
+    height: 15vh;
+    width: 15vh;
+    background-color: var(--font2);
+    border: 5px solid var(--theme1);
     margin:auto;
 }
 
+.comm-container {
+    height: 5vh;
+    color: var(--font2);
+}
+
+img {
+    height: 15vh;
+    width: 15vh;
+}
+
 .btn-container {
-    height: 10vh;
+    height: 15vh;
     width: 75vw;
     margin-left: auto;
     margin-right: auto;
 }
 
 .roll-btn {
-    height: 5vh;
+    height: 8vh;
+    width: 25vw;
+    color: var(--font2);
+    background-color: var(--theme2);
+    font-size: xx-large;
 }
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    color: var(--font2);
+    background-color: var(--theme1);
+    font-size: small;
+ }
