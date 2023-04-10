@@ -13,9 +13,10 @@ Variables
     --font2: white;
     --theme1: #010101;
     --theme2: #131313;
-    --theme3: #2285EB;
-    --theme4: #FFEB32;
-    --theme5: #AB47BB;
+    --theme3: #3e3d3d;
+    --theme4: #2285EB;
+    --theme5: #FFEB32;
+    --theme6: #AB47BB;
     --gameover: #E93F33;
 }
 
@@ -26,7 +27,6 @@ Global Styles
 */
 * {
     margin: 0;
-    vertical-align: baseline;
 }
 
 main {
@@ -45,16 +45,19 @@ main {
     color: var(--font2);
     background-color: var(--theme1);
     align-content: center;
+    overflow: hidden;
 }
 
 .stage {
     margin-top: 2vh;
 }
+
 ol {
     width: 50vw;
     text-align: left;
     display: inline-block;
     margin-top: 5vh;
+    list-style: none;
 }
 
 li {
@@ -74,10 +77,22 @@ li {
     margin-left: auto;
     margin-right: auto;
     color: var(--font2);
+    overflow-x: hidden;
 }
 
 .num-list {
-    display: inline;
+    list-style-type: none;
+    padding-top: 3vh;
+}
+
+.num {
+    display:inline-block;
+    padding-right: 3vw;
+    font-size: 4.5vh;
+}
+
+#two, #three, #four, #five, #six, #seven, #eight, #nine, #ten, #eleven, #twelve {
+    color: var(--theme3);
 }
 
 .dice-container {
