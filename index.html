@@ -18,8 +18,9 @@
                 <div class="result">
                     <ol>
                         <li>Your goal is to complete stages 1-11 by rolling a unique number each time.</li>
-                        <li>At each stage, you have two attempts to roll a unique number. You can click a die to freeze it between attempts if you want.</li>
+                        <li>At each stage, you have two attempts to roll a unique number. You can click a die to freeze it between attempts if you want. [Hint: you can freeze both and roll to keep first attempt.]</li>
                         <li>The game ends if your final roll is a repeat number or if you make it to the end and win!</li>
+                        <li>Roll the dice to begin!</li>
                     </ol>
                 </div>
             </div>
@@ -39,11 +40,11 @@
                 </ul>
             </div>
             <div class="dice-container" id="dice-container">
-                <div class="dice">
-                    <img id="dieone" src="images/three.png">
+                <div class="dice" id="outline1">
+                    <img id="dieone" src="images/three.png" onclick="dieOne.freeze()">
                 </div>
-                <div class="dice">
-                    <img id="dietwo" src="images/four.png">
+                <div class="dice" id="outline2">
+                    <img id="dietwo" src="images/four.png" onclick="dieTwo.freeze()">
                 </div>
             </div>
             <div class="comm-container">
