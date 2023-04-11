@@ -45,8 +45,15 @@ main {
     color: var(--font2);
     background-color: var(--theme1);
     align-content: center;
-    overflow: hidden;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.game-area::-webkit-scrollbar {
+    display: none;
+  }
 
 .stage {
     margin-top: 2vh;
