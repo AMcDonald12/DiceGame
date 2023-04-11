@@ -1,4 +1,4 @@
-#DICE GAME
+# DICE GAME
 
 This is a simple dice game based on shut the box.
 The goal is roll numbers 2-12 without repeating yourself.
