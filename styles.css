@@ -41,7 +41,7 @@ main {
 }
 
 .game-area {
-    height: 40vh;
+    height: 30vh;
     color: var(--font2);
     background-color: var(--theme1);
     align-content: center;
@@ -69,7 +69,7 @@ li {
 }
 
 .num-bank {
-    height: 10vh;
+    height: 15vh;
     width: 75vw;
     border: 3px solid white;
     margin-bottom: 2vh;
@@ -82,13 +82,13 @@ li {
 
 .num-list {
     list-style-type: none;
-    padding-top: 3vh;
+    padding-top: 4vh;
 }
 
 .num {
     display:inline-block;
     padding-right: 3vw;
-    font-size: 4.5vh;
+    font-size: 5vh;
 }
 
 #n2, #n3, #n4, #n5, #n6, #n7, #n8, #n9, #n10, #n11, #n12 {
@@ -115,8 +115,13 @@ li {
 }
 
 .comm-container {
-    height: 5vh;
+    height: 10vh;
     color: var(--font2);
+}
+
+.comm {
+    padding-top: 2vh;
+    font-size: x-large;
 }
 
 img {
@@ -133,7 +138,7 @@ img {
 
 .roll-btn {
     height: 8vh;
-    width: 25vw;
+    width: 33vw;
     color: var(--font2);
     background-color: var(--theme2);
     font-size: xx-large;
@@ -147,4 +152,9 @@ img {
     color: var(--font2);
     background-color: var(--theme1);
     font-size: small;
+ }
+
+ a {
+    color: white;
+    text-decoration: none;
  }

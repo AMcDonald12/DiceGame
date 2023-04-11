@@ -43,7 +43,7 @@ class Dice {
     freeze () {
             this.frozen = !this.frozen;
             if (this.frozen == true) {
-                this.outline.style.borderColor = '#FFEB32';
+                this.outline.style.borderColor = '#39FF14';
             }
             else {
                 this.outline.style.borderColor = '#131313';
@@ -92,6 +92,7 @@ rollBtn.addEventListener("click", function() {
                 let totalIndex = uniqueNumbers.indexOf(total);
                 rolledNumbers.push(uniqueNumbers.splice(totalIndex, 1));
                 console.log(rolledNumbers);
+                
                 //update interface
                 commentary.textContent = `You rolled ${total}. Great! You have two rolls for the next number...`;
                 var numberToColor = document.getElementById(`n${total}`);
