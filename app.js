@@ -8,6 +8,10 @@ const dieSides = {
 };
 
 const colorList = ['#2285EB','#FFEB32','#AB47BB']
+const defaultColor = '#010101';
+const inactive = '#131313';
+const youLose = '#E93F33';
+const youWin = '#39FF14';
 
 //Initialize number banks
 let uniqueNumbers = [2,3,4,5,6,7,8,9,10,11,12];
@@ -21,6 +25,7 @@ const dieOneOutline = document.getElementById("outline1");
 const dieTwoElem = document.getElementById("dietwo");
 const dieTwoOutline = document.getElementById("outline2");
 const commentary = document.getElementById("comm");
+const gameArea = document.getElementById("game-area");
 
 //Dice class to control each die object seperately during game
 class Dice {
@@ -43,21 +48,36 @@ class Dice {
     freeze () {
             this.frozen = !this.frozen;
             if (this.frozen == true) {
-                this.outline.style.borderColor = '#39FF14';
+                this.outline.style.borderColor = youWin;
             }
             else {
-                this.outline.style.borderColor = '#131313';
+                this.outline.style.borderColor = inactive;
             }
     }
     unfreeze () {
         this.frozen = false;
-        this.outline.style.borderColor = '#131313';
+        this.outline.style.borderColor = inactive;
     }
 }
 
-//Initialize dice
+//Object to update game area
+class GameArea {
+    constructor(element) {
+        this.element = element;
+    }
+    update(total) {
+        this.element.textContent = `${total}`;
+        this.element.style.fontSize = '20vh';
+    }
+    changeBackground(color) {
+        this.element.style.backgroundColor = color;
+    }
+}
+
+//Initialize dice and game area
 let dieOne = new Dice(3, dieSides[3], false, dieOneElem, dieOneOutline);
 let dieTwo = new Dice(4, dieSides[4], false, dieTwoElem, dieTwoOutline);
+let area = new GameArea(gameArea);
 
 //initilize game variables
 var attempt = 1;
@@ -70,12 +90,14 @@ rollBtn.addEventListener("click", function() {
     if (gameOver == false) {
         //First attempt logic
         if (attempt == 1) {
+            area.changeBackground(defaultColor);
             dieOne.roll();
             dieTwo.roll();
             total = dieOne.value + dieTwo.value;
             console.log(`Total: ${total}`);
             attempt += 1;
-            commentary.textContent = `Total is ${total}. Roll one more time!`
+            commentary.textContent = `Total is ${total}. Roll one more time!`;
+            area.update(total);
         }
         //Second attempt logic
         else {
@@ -84,7 +106,8 @@ rollBtn.addEventListener("click", function() {
             total = dieOne.value + dieTwo.value;
             console.log(`Total: ${total}`);
             attempt -= 1;
-            
+            area.update(total);
+
             //If second attmept rolls a new number:
             if (uniqueNumbers.includes(total)) {
                 
@@ -95,6 +118,7 @@ rollBtn.addEventListener("click", function() {
                 
                 //update interface
                 commentary.textContent = `You rolled ${total}. Great! You have two rolls for the next number...`;
+                area.changeBackground(colorList[colorCounter]);
                 var numberToColor = document.getElementById(`n${total}`);
                 numberToColor.style.color = colorList[colorCounter];
                 
@@ -113,21 +137,23 @@ rollBtn.addEventListener("click", function() {
                 //check for win condition
                 if (rolledNumbers.length == 11) { 
                     commentary.textContent = 'Congratulations! You Win!';
+                    area.changeBackground(youWin);
                     gameOver = true;
-                    dieOneOutline.style.borderColor = '#39FF14';
-                    dieTwoOutline.style.borderColor = '#39FF14';
+                    dieOneOutline.style.borderColor = youWin;
+                    dieTwoOutline.style.borderColor = youWin;
                     rollBtn.textContent = 'play again';
-                    rollBtn.style.backgroundColor = '#39FF14';
+                    rollBtn.style.backgroundColor = youWin;
                 }
             }
             //If you roll a repeat number GAMEOVER
             else {
                 commentary.textContent = `You alread rolled ${total}. Game over.`;
+                area.changeBackground(youLose);
                 gameOver = true;
-                dieOneOutline.style.borderColor = '#E93F33';
-                dieTwoOutline.style.borderColor = '#E93F33';
+                dieOneOutline.style.borderColor = youLose;
+                dieTwoOutline.style.borderColor = youLose;
                 rollBtn.textContent = 'try again';
-                rollBtn.style.backgroundColor = '#E93F33';
+                rollBtn.style.backgroundColor = youLose;
             }
         }
     }

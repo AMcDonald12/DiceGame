@@ -44,7 +44,6 @@ main {
     height: 30vh;
     color: var(--font2);
     background-color: var(--theme1);
-    align-content: center;
     overflow-y: scroll;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
@@ -80,7 +79,7 @@ li {
     width: 75vw;
     border: 3px solid white;
     margin-bottom: 2vh;
-    margin-top: 2vh;
+    margin-top: auto;
     margin-left: auto;
     margin-right: auto;
     color: var(--font2);
@@ -137,7 +136,7 @@ img {
 }
 
 .btn-container {
-    height: 15vh;
+    height: 17vh;
     width: 75vw;
     margin-left: auto;
     margin-right: auto;
