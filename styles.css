@@ -14,7 +14,7 @@ Variables
     --theme2: #131313;
     --theme3: #3e3d3d;
     --theme4: #2285EB;
-    --theme5: #FFEB32;
+    --theme5: #E67E21;
     --theme6: #AB47BB;
     --gameover: #E93F33;
     --win: #39FF14;
@@ -29,6 +29,10 @@ Global Styles
     margin: 0;
 }
 
+body {
+    font-family: 'Roboto Slab', serif;
+}
+
 main {
     background-color: var(--theme1);
     text-align: center;
@@ -41,10 +45,11 @@ main {
 }
 
 .game-area {
-    height: 30vh;
+    height: 25vh;
     color: var(--font2);
     background-color: var(--theme1);
     overflow-y: scroll;
+    margin-bottom: 5vh;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
 }
@@ -54,20 +59,17 @@ main {
     display: none;
   }
 
-.stage {
-    margin-top: 2vh;
-}
-
 ol {
     width: 50vw;
     text-align: left;
     display: inline-block;
-    margin-top: 5vh;
+    margin-top: 2vh;
     list-style: none;
 }
 
 li {
     margin-bottom: 10px;
+    font-size: medium;
 }
 
 .prompt {

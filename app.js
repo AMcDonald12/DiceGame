@@ -7,7 +7,7 @@ const dieSides = {
     6 : 'images/six.png'
 };
 
-const colorList = ['#2285EB','#FFEB32','#AB47BB']
+const colorList = ['#2285EB','#E67E21','#AB47BB']
 const defaultColor = '#010101';
 const inactive = '#131313';
 const youLose = '#E93F33';
@@ -48,15 +48,26 @@ class Dice {
     freeze () {
             this.frozen = !this.frozen;
             if (this.frozen == true) {
-                this.outline.style.borderColor = youWin;
+                this.outline.style.borderColor = youWin
+                this.outline.style.boxShadow = `0px 0px 4px ${youWin}`;
             }
             else {
-                this.outline.style.borderColor = inactive;
+                this.outline.style.borderColor = inactive
+                this.outline.style.boxShadow = `0px 0px 0px ${inactive}`;
             }
     }
     unfreeze () {
         this.frozen = false;
         this.outline.style.borderColor = inactive;
+        this.outline.style.boxShadow = `0px 0px 0px ${inactive}`;
+    }
+    gameOver() {
+        this.outline.style.borderColor = youLose;
+        this.outline.style.boxShadow = `0px 0px 6px ${youLose}`;
+    }
+    victory() {
+        this.outline.style.borderColor = youWin;
+        this.outline.style.boxShadow = `0px 0px 6px ${youWin}`;
     }
 }
 
@@ -71,6 +82,7 @@ class GameArea {
     }
     changeBackground(color) {
         this.element.style.backgroundColor = color;
+        this.element.style.boxShadow = `0px 0px 8px ${color}`;
     }
 }
 
@@ -121,6 +133,7 @@ rollBtn.addEventListener("click", function() {
                 area.changeBackground(colorList[colorCounter]);
                 var numberToColor = document.getElementById(`n${total}`);
                 numberToColor.style.color = colorList[colorCounter];
+                numberToColor.style.textShadow = `0px 0px 2px ${colorList[colorCounter]}`
                 
                 //reset dice
                 dieOne.unfreeze();
@@ -139,8 +152,8 @@ rollBtn.addEventListener("click", function() {
                     commentary.textContent = 'Congratulations! You Win!';
                     area.changeBackground(youWin);
                     gameOver = true;
-                    dieOneOutline.style.borderColor = youWin;
-                    dieTwoOutline.style.borderColor = youWin;
+                    dieOne.victory();
+                    dieTwo.victory();
                     rollBtn.textContent = 'play again';
                     rollBtn.style.backgroundColor = youWin;
                 }
@@ -150,8 +163,8 @@ rollBtn.addEventListener("click", function() {
                 commentary.textContent = `You alread rolled ${total}. Game over.`;
                 area.changeBackground(youLose);
                 gameOver = true;
-                dieOneOutline.style.borderColor = youLose;
-                dieTwoOutline.style.borderColor = youLose;
+                dieOne.gameOver();
+                dieTwo.gameOver();
                 rollBtn.textContent = 'try again';
                 rollBtn.style.backgroundColor = youLose;
             }
