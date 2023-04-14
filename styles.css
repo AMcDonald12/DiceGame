@@ -46,12 +46,14 @@ main {
 
 .game-area {
     height: 25vh;
+    width: 100vw;
     color: var(--font2);
     background-color: var(--theme1);
     margin-bottom: 2vh;
     overflow-y: scroll;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
+    transition: background-color 0.2s ease-in-out;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -101,6 +103,7 @@ li {
 
 #n2, #n3, #n4, #n5, #n6, #n7, #n8, #n9, #n10, #n11, #n12 {
     color: var(--theme3);
+    transition: all 0.4s ease 0s;
 }
 
 .dice-container {
@@ -108,6 +111,7 @@ li {
     width: 75vw;
     margin-bottom: 6vh;
     margin-left: auto;
+    transition: all 0.4s ease 0s;
     margin-right: auto;
     text-align: center;
 }
@@ -119,12 +123,20 @@ li {
     background-color: var(--font2);
     border: 5px solid;
     margin:auto;
+    transition: all 0.4s ease 0s;
     border-color: var(--theme2);
+}
+
+.dice:hover {
+    transition: all 0.4s ease 0s;
+    box-shadow: 0px 0px 6px rgba(255, 255, 255, 1) !important;
 }
 
 .comm-container {
     height: 10vh;
     color: var(--font2);
+    display: inline-block;
+    transition: all 0.4s ease 0s;
 }
 
 .comm {
@@ -151,14 +163,22 @@ img {
     background-color: var(--theme2);
     font-size: xx-large;
     font-family: 'Roboto Slab', serif;
+    border-radius: 50px;
+    transition: all 0.4s ease 0s;
 }
+
+.roll-btn:hover {
+    text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+    transition: all 0.4s ease 0s;
+    background-color: var(--theme1);
+  }
 
 .footer {
     position: fixed;
     bottom: 0;
     width: 100%;
     height: auto;
-    color: var(--font2);
+    color: var(--font2) !important;
     background-color: var(--theme1);
     font-size: small;
  }
@@ -167,3 +187,46 @@ img {
     color: white;
     text-decoration: none;
  }
+
+ /*Mobile Version*/
+ @media (max-width: 800px) {
+    .game-area {
+        height: 20vh;
+        font-size: x-small;
+        scroll-snap-align: center;
+    }
+    ol {
+        width: 90vw;
+        margin-top: 0;
+    }
+    li {
+        font-size: small;
+    }
+    .comm-container {
+        height: 5vh;
+    }
+
+    .comm {
+        font-size: small;
+        padding-top: 0vh;
+    }
+
+    .num-bank {
+        margin-bottom: 3vh;
+        width: 80vw;
+    }
+    .num-list {
+        padding-left: 10vw;
+        padding-right: 8vw;
+        padding-top: 0;
+        font-size: medium;
+    }
+
+    .roll-btn {
+        font-size: small;
+    }
+
+   .dice-container {
+    margin-bottom: 4vh;
+   }
+  }

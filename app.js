@@ -1,3 +1,7 @@
+//Check Screen Size
+const mediaQuery = window.matchMedia('(max-width: 800px)')
+
+//Pictures and Colors
 const dieSides = {
     1 : 'images/one.png',
     2 : 'images/two.png',
@@ -78,12 +82,30 @@ class GameArea {
     }
     update(total) {
         this.element.textContent = `${total}`;
-        this.element.style.fontSize = '20vh';
+        this.element.style.fontSize = '15vh';
     }
     changeBackground(color) {
         this.element.style.backgroundColor = color;
         this.element.style.boxShadow = `0px 0px 8px ${color}`;
     }
+    gameOver() {
+        if (mediaQuery.matches) {
+            this.element.style.fontSize = '8vh';
+        }
+        else {
+            this.element.style.fontSize = '15vh';
+        }
+        this.element.textContent = 'GAME OVER';
+    }
+    victory() {
+        if (mediaQuery.matches) {
+            this.element.style.fontSize = '8vh';
+        }
+        else {
+            this.element.style.fontSize = '15vh';
+        }
+        this.element.textContent = 'YOU WIN!';
+    }   
 }
 
 //Initialize dice and game area
@@ -151,6 +173,7 @@ rollBtn.addEventListener("click", function() {
                 if (rolledNumbers.length == 11) { 
                     commentary.textContent = 'Congratulations! You Win!';
                     area.changeBackground(youWin);
+                    area.victory();
                     gameOver = true;
                     dieOne.victory();
                     dieTwo.victory();
@@ -162,6 +185,7 @@ rollBtn.addEventListener("click", function() {
             else {
                 commentary.textContent = `You alread rolled ${total}. Game over.`;
                 area.changeBackground(youLose);
+                area.gameOver();
                 gameOver = true;
                 dieOne.gameOver();
                 dieTwo.gameOver();
