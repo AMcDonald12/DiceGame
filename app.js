@@ -7,7 +7,7 @@ const dieSides = {
     6 : 'images/six.png'
 };
 
-const colorList = ['#2285EB','#E67E21','#AB47BB']
+const colorList = ['#18B1D1','#E67E21','#AB47BB']
 const defaultColor = '#010101';
 const inactive = '#131313';
 const youLose = '#E93F33';
@@ -154,7 +154,7 @@ rollBtn.addEventListener("click", function() {
                     gameOver = true;
                     dieOne.victory();
                     dieTwo.victory();
-                    rollBtn.textContent = 'play again';
+                    rollBtn.textContent = 'Play Again';
                     rollBtn.style.backgroundColor = youWin;
                 }
             }
@@ -165,7 +165,7 @@ rollBtn.addEventListener("click", function() {
                 gameOver = true;
                 dieOne.gameOver();
                 dieTwo.gameOver();
-                rollBtn.textContent = 'try again';
+                rollBtn.textContent = 'Play Again';
                 rollBtn.style.backgroundColor = youLose;
             }
         }

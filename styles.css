@@ -13,7 +13,7 @@ Variables
     --theme1: #010101;
     --theme2: #131313;
     --theme3: #3e3d3d;
-    --theme4: #2285EB;
+    --theme4: #18B1D1;
     --theme5: #E67E21;
     --theme6: #AB47BB;
     --gameover: #E93F33;
@@ -48,8 +48,8 @@ main {
     height: 25vh;
     color: var(--font2);
     background-color: var(--theme1);
+    margin-bottom: 2vh;
     overflow-y: scroll;
-    margin-bottom: 5vh;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
 }
@@ -106,7 +106,7 @@ li {
 .dice-container {
     height: 15vh;
     width: 75vw;
-    margin-bottom: 3vh;
+    margin-bottom: 6vh;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -150,6 +150,7 @@ img {
     color: var(--font2);
     background-color: var(--theme2);
     font-size: xx-large;
+    font-family: 'Roboto Slab', serif;
 }
 
 .footer {
