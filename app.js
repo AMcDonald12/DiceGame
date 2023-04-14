@@ -11,7 +11,7 @@ const dieSides = {
     6 : 'images/six.png'
 };
 
-const colorList = ['#18B1D1','#E67E21','#AB47BB']
+const colorList = ['#18B1D1','#E67E21','#AB47BB'];
 const defaultColor = '#010101';
 const inactive = '#131313';
 const youLose = '#E93F33';
@@ -82,7 +82,12 @@ class GameArea {
     }
     update(total) {
         this.element.textContent = `${total}`;
-        this.element.style.fontSize = '15vh';
+        if (mediaQuery.matches) {
+            this.element.style.fontSize = '15vh';
+        }
+        else {
+            this.element.style.fontSize = '20vh';
+        }
     }
     changeBackground(color) {
         this.element.style.backgroundColor = color;
@@ -93,7 +98,7 @@ class GameArea {
             this.element.style.fontSize = '8vh';
         }
         else {
-            this.element.style.fontSize = '15vh';
+            this.element.style.fontSize = '17vh';
         }
         this.element.textContent = 'GAME OVER';
     }
@@ -102,12 +107,11 @@ class GameArea {
             this.element.style.fontSize = '8vh';
         }
         else {
-            this.element.style.fontSize = '15vh';
+            this.element.style.fontSize = '17vh';
         }
         this.element.textContent = 'YOU WIN!';
     }   
 }
-
 //Initialize dice and game area
 let dieOne = new Dice(3, dieSides[3], false, dieOneElem, dieOneOutline);
 let dieTwo = new Dice(4, dieSides[4], false, dieTwoElem, dieTwoOutline);
