@@ -7,4 +7,4 @@ your chances at the number you want.
 
 Play the game [here](https://dicerollinggame.s3.us-west-1.amazonaws.com/index.html).
 
-Built using html, css, and vanilla javascript.
+Built using html, css, and javascript.
