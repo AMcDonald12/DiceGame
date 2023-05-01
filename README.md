@@ -5,6 +5,6 @@ The goal is roll numbers 2-12 without repeating yourself.
 You can choose to freeze a die between attempts to increase
 your chances at the number you want.
 
-Play the game [here](https://dicerollinggame.s3.us-west-1.amazonaws.com/index.html).
+You can play the game [here](https://dicerollinggame.s3.us-west-1.amazonaws.com/index.html).
 
 Built using html, css, and javascript.
